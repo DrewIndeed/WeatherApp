@@ -22,7 +22,7 @@ struct WelcomeView: View {
                     .font(.system(size: 40))
                     .foregroundColor(Color(hue: 0.951, saturation: 0.636, brightness: 0.999))
                 
-                Text("Let's choose where you want to know about the weather, even your area by clicking 'Share Current Location'")
+                Text("Let's choose where you want to know about the weather, even your area by clicking 'Share Current Location'!")
                     .font(.subheadline)
                     .padding()
             }
@@ -39,6 +39,30 @@ struct WelcomeView: View {
             .cornerRadius(30)
             .symbolVariant(.fill)
             .foregroundColor(.white)
+            
+            // go to cities list button
+            Button(action: {
+                // Jump to Australia cities list here
+            }, label: {
+                HStack(alignment: .center, spacing: 0) {
+                    Image(systemName: "sun.max.fill")
+                        .padding(.leading, 10)
+                        .foregroundColor(.yellow)
+                    
+                    Text("Get Australia Cities")
+                        .font(.system(size: 19))
+                        .foregroundColor(.yellow)
+                        .padding(.all, 10)
+                }
+            })
+            .background(
+                RoundedRectangle(cornerRadius: 30.0)
+                    .stroke(lineWidth: 2)
+                    .foregroundColor(.yellow)
+                    .frame(width: 250, height: 57)
+            )
+            .frame(width: 250, height: 70)
+            .padding(.top, 15)
         }
     }
 }
