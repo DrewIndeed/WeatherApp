@@ -20,8 +20,18 @@ struct ContentView: View {
             backgroundColor.ignoresSafeArea(.all)
             
             // content
-            WelcomeView()
-                .environmentObject(locationManager)
+            // if location found, show views content
+            if let location = locationManager.location {
+                Text("Found coordinates: \(location.longitude) - \(location.latitude)")
+            } else {
+                if locationManager.isLoading {
+                    ActivityIndicatorView()
+                        .foregroundColor(Color(hue: 0.951, saturation: 0.636, brightness: 0.999))
+                } else {
+                    WelcomeView()
+                        .environmentObject(locationManager)
+                }
+            }
         }
         .preferredColorScheme(.dark)
     }

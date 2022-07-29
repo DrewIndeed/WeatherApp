@@ -13,6 +13,8 @@
 		8FB818F92892C6E400954A8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FB818F82892C6E400954A8A /* Preview Assets.xcassets */; };
 		8FB819012892C98500954A8A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB819002892C98500954A8A /* LocationManager.swift */; };
 		8FB819042892CBE000954A8A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB819032892CBE000954A8A /* WelcomeView.swift */; };
+		8FB819062892D5F500954A8A /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB819052892D5F500954A8A /* CustomProgressView.swift */; };
+		8FB819082892DE1800954A8A /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB819072892DE1800954A8A /* ActivityIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		8FB818F82892C6E400954A8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8FB819002892C98500954A8A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		8FB819032892CBE000954A8A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		8FB819052892D5F500954A8A /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
+		8FB819072892DE1800954A8A /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 			children = (
 				8FB818F32892C6E000954A8A /* ContentView.swift */,
 				8FB819032892CBE000954A8A /* WelcomeView.swift */,
+				8FB819052892D5F500954A8A /* CustomProgressView.swift */,
+				8FB819072892DE1800954A8A /* ActivityIndicatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +168,8 @@
 				8FB818F42892C6E000954A8A /* ContentView.swift in Sources */,
 				8FB818F22892C6E000954A8A /* WeatherAppApp.swift in Sources */,
 				8FB819012892C98500954A8A /* LocationManager.swift in Sources */,
+				8FB819082892DE1800954A8A /* ActivityIndicatorView.swift in Sources */,
+				8FB819062892D5F500954A8A /* CustomProgressView.swift in Sources */,
 				8FB819042892CBE000954A8A /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherApp/Preview Content\"";
+				DEVELOPMENT_TEAM = URR523CCSD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -319,6 +328,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherApp/Preview Content\"";
+				DEVELOPMENT_TEAM = URR523CCSD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
