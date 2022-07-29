@@ -5,31 +5,38 @@
 //  Created by Andrew Le Nguyen on 28/07/2022.
 //
 
-import SwiftUI
-
 import Foundation
 import SwiftUI
 
 struct ActivityIndicatorView: View {
-    
     @State private var isAnimating: Bool = false
+    let colors: [Color] = [.pink, .yellow, .green, .cyan, .orange].reversed()
+    let divideValue = 10.0
     
     var body: some View {
         GeometryReader { (geometry: GeometryProxy) in
-            ForEach(0..<5) { index in
+            ForEach(0..<colors.count, id: \.self) { index in
                 Group {
                     Circle()
-                        // you can change the size by changing the numebr 8
-                        .frame(width: geometry.size.width / 10, height: geometry.size.height / 10)
+                        // can change the size by changing the divideValue
+                        .frame(width: geometry.size.width / divideValue, height: geometry.size.height / divideValue)
                         .scaleEffect(calcScale(index: index))
                         .offset(y: calcYOffset(geometry))
-                }.frame(width: geometry.size.width, height: geometry.size.height)
-                    .rotationEffect(!self.isAnimating ? .degrees(0) : .degrees(360))
+                }
+                .frame(
+                    width: geometry.size.width,
+                    height: geometry.size.height
+                )
+                .foregroundColor(colors[index])
+                .rotationEffect(!self.isAnimating ? .degrees(0) : .degrees(360))
                 
-                // you can change the size by changing the numebr 8
-                    .animation(Animation
-                        .timingCurve(0.5, 0.15 + Double(index) / 10, 0.25, 1, duration: 1.5)
-                        .repeatForever(autoreverses: false))
+                // can change the size by changing the divideValue
+                .animation(
+                    Animation
+                        .timingCurve(0.5, 0.15 + Double(index) / divideValue, 0.25, 1, duration: 2)
+                        .repeatForever(autoreverses: false),
+                    value: self.isAnimating
+                )
             }
         }
         .aspectRatio(1, contentMode: .fit)

@@ -8,25 +8,45 @@
 import SwiftUI
 
 struct ContentView: View {
-    /* using StateObject to notify the View everytime
-     the @Publish variables in Location Manager are updated */
+    /*
+     Using StateObject to notify the View everytime
+     the @Publish variables in Location Manager are updated
+     */
     @StateObject var locationManager = LocationManager()
-    
-    @State var backgroundColor: Color = Color(hue: 0.656, saturation: 0.932, brightness: 0.475)
+    @State var backgroundColor: Color = Color(hue: 0.656, saturation: 0.932, brightness: 0.475) // dark blue
+    @State var weatherManager = WeatherManager()
+    @State var weatherData: WeatherResponseModel?
     
     var body: some View {
         ZStack {
             // background
             backgroundColor.ignoresSafeArea(.all)
             
-            // content
             // if location found, show views content
             if let location = locationManager.location {
-                Text("Found coordinates: \(location.longitude) - \(location.latitude)")
+                // content
+                // if weather is feathed successfully
+                if weatherData != nil {
+                    Text("Weather data successfully fetched!")
+                } else {
+                    // if not, show loading and try again
+                    ActivityIndicatorView()
+                        .task {
+                            do {
+                                weatherData = try await
+                                weatherManager
+                                    .getCurrentWeather(
+                                        latitude: location.latitude,
+                                        longitude: location.longitude)
+                            } catch {
+                                print("[ERROR GETTING WEATHER]: \(error)")
+                            }
+                        }
+                }
             } else {
+                // if there has been no location
                 if locationManager.isLoading {
                     ActivityIndicatorView()
-                        .foregroundColor(Color(hue: 0.951, saturation: 0.636, brightness: 0.999))
                 } else {
                     WelcomeView()
                         .environmentObject(locationManager)
