@@ -27,7 +27,7 @@ struct ContentView: View {
                 // content
                 // if weather is feathed successfully
                 if let weatherData = weatherData {
-//                    Text("Weather data successfully fetched!")
+                    // then, display weather details view
                     WeatherView(weather: weatherData)
                 } else {
                     // if not, show loading and try again
@@ -46,10 +46,11 @@ struct ContentView: View {
                         }
                 }
             } else {
-                // if there has been no location
+                // if there has been no current location
                 if locationManager.isLoading {
                     ActivityIndicatorView(divideValue: 9.0)
                 } else {
+                    // show welcome view
                     WelcomeView()
                         .environmentObject(locationManager)
                 }

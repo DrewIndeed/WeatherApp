@@ -7,8 +7,9 @@
 
 import Foundation
 
-var previewWeather: WeatherResponseModel = load("weatherData.json")
-
+/*
+ Method to read and parse JSON data from JSON file
+ */
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
 
@@ -30,3 +31,6 @@ func load<T: Decodable>(_ filename: String) -> T {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
     }
 }
+
+// load preview weather JSON data
+var previewWeather: WeatherResponseModel = load("weatherData.json")

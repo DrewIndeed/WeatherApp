@@ -13,7 +13,9 @@ struct WeatherRow: View {
     var value: String
     
     var body: some View {
+        // Status block starts
         HStack(spacing: 20) {
+            // Icon for status attribute
             Image(systemName: logo)
                 .font(.title2)
                 .foregroundColor(.pink)
@@ -22,7 +24,7 @@ struct WeatherRow: View {
                 .background(Color(hue: 0.76, saturation: 0.032, brightness: 0.879, opacity: 0.3))
                 .cornerRadius(50)
             
-            
+            // Readable contents for status attribute
             VStack(alignment: .leading, spacing: 8) {
                 Text(name)
                     .font(.caption)
@@ -32,6 +34,7 @@ struct WeatherRow: View {
                     .font(.title3)
             }
         }
+        // Status block ends
     }
 }
 

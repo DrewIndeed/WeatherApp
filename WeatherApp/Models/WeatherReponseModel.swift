@@ -32,11 +32,11 @@ struct WeatherResponseModel: Decodable {
 
     struct MainResponse: Decodable {
         var temp: Double
+        var pressure: Double
+        var humidity: Double
         var feels_like: Double
         var temp_min: Double
         var temp_max: Double
-        var pressure: Double
-        var humidity: Double
     }
     
     struct WindResponse: Decodable {

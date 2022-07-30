@@ -78,10 +78,10 @@ struct WeatherView: View {
                     
                     HStack(alignment: .center) {
                         WeatherRow(logo: "thermometer", name: "Min temp",
-                                   value: (weather.main.temp_min.roundDouble(pointnum: 2) + ("°C")))
+                                   value: (weather.main.tempMin.roundDouble(pointnum: 2) + ("°C")))
                         Spacer()
                         WeatherRow(logo: "thermometer", name: "Max temp",
-                                   value: (weather.main.temp_max.roundDouble(pointnum: 2) + "°C"))
+                                   value: (weather.main.tempMax.roundDouble(pointnum: 2) + "°C"))
                     }
                     
                     HStack(alignment: .center, spacing: 20) {

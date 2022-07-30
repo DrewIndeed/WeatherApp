@@ -89,14 +89,14 @@
 		8FB818F02892C6E000954A8A /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				8F88E17E28951A060047ACDC /* Components */,
+				8F88E17B2894FCDA0047ACDC /* Extensions.swift */,
 				8FB818F12892C6E000954A8A /* WeatherAppApp.swift */,
 				8FB818F52892C6E400954A8A /* Assets.xcassets */,
+				8F88E17E28951A060047ACDC /* Components */,
 				8FB818FF2892C97800954A8A /* Managers */,
 				8F88E172289416990047ACDC /* Models */,
 				8FB818F72892C6E400954A8A /* Preview Content */,
 				8FB819022892CAF400954A8A /* Views */,
-				8F88E17B2894FCDA0047ACDC /* Extensions.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";

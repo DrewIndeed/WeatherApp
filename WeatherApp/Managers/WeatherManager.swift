@@ -11,9 +11,12 @@ import CoreLocation
 
 class WeatherManager {
     /*
-        Method to make HTTP request to get weather from OpenWeather API
-    */
-    func getCurrentWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) async throws -> WeatherResponseModel {
+     Method to make HTTP request to get weather from OpenWeather API
+     */
+    func getCurrentWeather(
+        latitude: CLLocationDegrees,
+        longitude: CLLocationDegrees
+    ) async throws -> WeatherResponseModel {
         // API key
         let API_KEY = "8cefcd7047392abd796820e4610483a9";
         

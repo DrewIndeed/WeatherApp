@@ -10,7 +10,11 @@ import SwiftUI
 struct CustomProgressView: View {
     var body: some View {
         ProgressView("Loading...", value: 0, total: 100)
-            .progressViewStyle(CircularProgressViewStyle(tint: Color(hue: 0.94, saturation: 0.826, brightness: 0.991)))
+            .progressViewStyle(
+                CircularProgressViewStyle(
+                    tint: Color(hue: 0.94, saturation: 0.826, brightness: 0.991)
+                )
+            )
             .frame(width: .infinity, height: .infinity)
             .foregroundColor(Color(hue: 0.94, saturation: 0.826, brightness: 0.991))
     }

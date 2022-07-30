@@ -18,7 +18,7 @@ struct ActivityIndicatorView: View {
             ForEach(0..<colors.count, id: \.self) { index in
                 Group {
                     Circle()
-                        // can change the size by changing the divideValue
+                    // can change the size by changing the divideValue
                         .frame(width: geometry.size.width / divideValue,
                                height: geometry.size.height / divideValue)
                         .scaleEffect(calcScale(index: index))
@@ -46,10 +46,18 @@ struct ActivityIndicatorView: View {
         }
     }
     
+    /*
+     Method to change the scale of the circle shapes
+     */
     func calcScale(index: Int) -> CGFloat {
-        return (!isAnimating ? 1 - CGFloat(Float(index)) / 5 : 0.2 + CGFloat(index) / 5)
+        return (!isAnimating ?
+                1 - CGFloat(Float(index)) / 5
+                : 0.2 + CGFloat(index) / 5)
     }
     
+    /*
+     Method to calculate custom Y offset
+     */
     func calcYOffset(_ geometry: GeometryProxy) -> CGFloat {
         return geometry.size.width / 10 - geometry.size.height / 2
     }

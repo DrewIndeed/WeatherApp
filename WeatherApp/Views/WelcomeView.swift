@@ -14,6 +14,7 @@ struct WelcomeView: View {
     @EnvironmentObject var locationManager: LocationManager
     
     var body: some View {
+        // Content starts
         VStack {
             // textual content
             VStack (spacing: 20) {
@@ -64,6 +65,7 @@ struct WelcomeView: View {
             .frame(width: 250, height: 70)
             .padding(.top, 15)
         }
+        // Content ends
     }
 }
 
