@@ -11,7 +11,7 @@ import SwiftUI
 struct ActivityIndicatorView: View {
     @State private var isAnimating: Bool = false
     let colors: [Color] = [.pink, .yellow, .green, .cyan, .orange].reversed()
-    let divideValue = 10.0
+    var divideValue: Double
     
     var body: some View {
         GeometryReader { (geometry: GeometryProxy) in
@@ -19,7 +19,8 @@ struct ActivityIndicatorView: View {
                 Group {
                     Circle()
                         // can change the size by changing the divideValue
-                        .frame(width: geometry.size.width / divideValue, height: geometry.size.height / divideValue)
+                        .frame(width: geometry.size.width / divideValue,
+                               height: geometry.size.height / divideValue)
                         .scaleEffect(calcScale(index: index))
                         .offset(y: calcYOffset(geometry))
                 }
@@ -57,6 +58,6 @@ struct ActivityIndicatorView: View {
 
 struct ActivityIndicatorView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityIndicatorView()
+        ActivityIndicatorView(divideValue: 5.0)
     }
 }

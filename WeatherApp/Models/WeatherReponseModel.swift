@@ -16,6 +16,7 @@ struct WeatherResponseModel: Decodable {
     var main: MainResponse
     var name: String
     var wind: WindResponse
+    var sys: SysResponse
 
     struct CoordinatesResponse: Decodable {
         var lon: Double
@@ -42,11 +43,9 @@ struct WeatherResponseModel: Decodable {
         var speed: Double
         var deg: Double
     }
-}
-
-extension WeatherResponseModel.MainResponse {
-    var feelsLike: Double { return feels_like }
-    var tempMin: Double { return temp_min }
-    var tempMax: Double { return temp_max }
+    
+    struct SysResponse: Decodable {
+        var country: String
+    }
 }
 

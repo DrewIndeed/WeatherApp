@@ -22,7 +22,7 @@ struct WelcomeView: View {
                     .font(.system(size: 40))
                     .foregroundColor(Color(hue: 0.951, saturation: 0.636, brightness: 0.999))
                 
-                Text("Let's choose where you want to know about the weather, even your area by clicking 'Share Current Location'!")
+                Text("Let's choose where you want to know about the weather, even your current area by clicking 'Share Current Location'!")
                     .font(.subheadline)
                     .padding()
             }

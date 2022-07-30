@@ -18,7 +18,8 @@ class WeatherManager {
         let API_KEY = "8cefcd7047392abd796820e4610483a9";
         
         // create URL with suitable queries
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(API_KEY)&units=metric") else { fatalError("Missing URL") }
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(API_KEY)&units=metric")
+        else { fatalError("Missing URL") }
         
         // create URL request
         let urlRequest = URLRequest(url: url)

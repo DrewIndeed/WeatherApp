@@ -26,18 +26,20 @@ struct ContentView: View {
             if let location = locationManager.location {
                 // content
                 // if weather is feathed successfully
-                if weatherData != nil {
-                    Text("Weather data successfully fetched!")
+                if let weatherData = weatherData {
+//                    Text("Weather data successfully fetched!")
+                    WeatherView(weather: weatherData)
                 } else {
                     // if not, show loading and try again
-                    ActivityIndicatorView()
+                    ActivityIndicatorView(divideValue: 9.0)
                         .task {
                             do {
                                 weatherData = try await
                                 weatherManager
                                     .getCurrentWeather(
                                         latitude: location.latitude,
-                                        longitude: location.longitude)
+                                        longitude: location.longitude
+                                    )
                             } catch {
                                 print("[ERROR GETTING WEATHER]: \(error)")
                             }
@@ -46,7 +48,7 @@ struct ContentView: View {
             } else {
                 // if there has been no location
                 if locationManager.isLoading {
-                    ActivityIndicatorView()
+                    ActivityIndicatorView(divideValue: 9.0)
                 } else {
                     WelcomeView()
                         .environmentObject(locationManager)
