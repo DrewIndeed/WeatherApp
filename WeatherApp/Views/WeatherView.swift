@@ -8,21 +8,36 @@
 import SwiftUI
 
 struct WeatherView: View {
+    @EnvironmentObject var locationManager: LocationManager
     var weather: WeatherResponseModel
     
     var body: some View {
         ZStack(alignment: .leading) {
             VStack (spacing: 20) {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("\(weather.name), \(weather.sys.country)")
-                        .bold()
-                        .font(.title)
+                HStack {
+                    // clear location to get back to welcome view
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.4)) {
+                            locationManager.location = nil
+                        }
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.white)
+                            .font(.system(size: 30))
+                            .padding(.leading, 10)
+                    }
                     
-                    Text("Today, \(Date().formatted(.dateTime.month().day().hour().minute()))")
-                        .fontWeight(.light)
+                    VStack(alignment: .trailing, spacing: 5) {
+                        Text("\(weather.name), \(weather.sys.country)")
+                            .bold()
+                            .font(.title)
+                        
+                        Text("Today, \(Date().formatted(.dateTime.month().day().hour().minute()))")
+                            .fontWeight(.light)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.trailing, 10)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 10)
                 
                 Spacer()
                 

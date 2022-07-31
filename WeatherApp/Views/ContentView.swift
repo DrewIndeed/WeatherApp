@@ -25,12 +25,14 @@ struct ContentView: View {
             // if location found, show views content
             if let location = locationManager.location {
                 // content
-                // if weather is feathed successfully
+                // if weather has been feathed successfully
                 if let weatherData = weatherData {
                     // then, display weather details view
                     WeatherView(weather: weatherData)
+                        .transition(.move(edge: .trailing))
+                        .environmentObject(locationManager)
                 } else {
-                    // if not, show loading and try again
+                    // if not, show loading and start fetching
                     ActivityIndicatorView(divideValue: 9.0)
                         .task {
                             do {
@@ -52,6 +54,7 @@ struct ContentView: View {
                 } else {
                     // show welcome view
                     WelcomeView()
+                        .transition(.move(edge: .leading))
                         .environmentObject(locationManager)
                 }
             }
