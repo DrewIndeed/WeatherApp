@@ -29,7 +29,6 @@ struct ContentView: View {
                 if let weatherData = weatherData {
                     // then, display weather details view
                     WeatherView(weather: weatherData)
-                        .transition(.move(edge: .trailing))
                         .environmentObject(locationManager)
                 } else {
                     // if not, show loading and start fetching

@@ -33,7 +33,14 @@ struct WelcomeView: View {
             
             // get location permission -> if yes, get location coordinates
             LocationButton(.shareCurrentLocation) {
+                // on first app installation, this will ask for location permission
+                // but it will just set the permission as true and not update the location yet
                 locationManager.requestLocation()
+                
+                // this line is to make sure that after having the permission, it will request again
+                if locationManager.isLoading {
+                    locationManager.requestLocation()
+                }
             }
             .frame(width: 250, height: 60)
             .background(Color(red: 0.0, green: 0.47843137254901963, blue: 1.0))
