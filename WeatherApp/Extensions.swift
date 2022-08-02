@@ -15,12 +15,13 @@ extension WeatherResponseModel.MainResponse {
     var tempMax: Double { return temp_max }
 }
 
-// Extension to format Double when printing
 extension Double {
+    // round + format Double when printing
     func roundDouble(pointnum: Int) -> String {
         return String(format: "%.\(pointnum)f", self)
     }
     
+    // unix date value to formate datetime string
     func convertDate(formate: String) -> String {
         let date = Date(timeIntervalSince1970: self)
         let dateFormatter = DateFormatter()
@@ -35,8 +36,8 @@ extension Double {
     }
 }
 
-// Extension for adding rounded corners to specific corners of a View
 extension View {
+    // adding rounded corners to specific corners of a View
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape(
             RoundedCorner(
@@ -64,8 +65,8 @@ struct RoundedCorner: Shape {
     }
 }
 
-// Extension to return icons name according to string weather conditions
 extension String {
+    // to return icons name according to string weather conditions
     func checkIconName() -> String {
         let iconsMap: [String: String] = [
             "Clear": "sun.max.fill",
@@ -85,10 +86,8 @@ extension String {
         return "aqi.medium";
     }
     
+    // check if city name already has "City" or not. If not, concat "City".
     func checkCityTrailing() -> String {
-        if (self.lowercased().contains("city")) {
-            return self;
-        }
-        return self + " City"
+        return self.lowercased().contains("city")? self : self + " City"
     }
 }

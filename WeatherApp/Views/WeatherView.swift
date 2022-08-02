@@ -11,15 +11,18 @@ struct WeatherView: View {
     @EnvironmentObject var locationManager: LocationManager
     var weather: WeatherResponseModel
     
-    // 1. .fixed(value), .flexible(), .adaptive()
+    // grid layout for Current Status
     let columns: [GridItem] = [
         GridItem(.fixed(50), spacing: 30, alignment: .leading),
         GridItem(.fixed(50), spacing: 30, alignment: .leading),
     ]
     
     var body: some View {
+        // main layout ZStack starts
         ZStack(alignment: .leading) {
+            // --- Section 1 ---
             VStack (spacing: 20) {
+                // back button with city name and date - starts
                 HStack {
                     // clear location to get back to welcome view
                     Button {
@@ -45,9 +48,11 @@ struct WeatherView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding(.trailing, 10)
                 }
+                // back button with city name and date - ends
                 
                 Spacer()
                 
+                // weather description with current temparature - starts
                 VStack {
                     HStack (alignment: .center, spacing: 30) {
                         VStack(spacing: 6) {
@@ -90,11 +95,14 @@ struct WeatherView: View {
                     
                     Spacer()
                 }
+                // weather description with current temparature - ends
                 .frame(maxWidth: .infinity, alignment: .center)
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
+            // --- Section 1 ---
             
+            // --- Section 2 ---
             HStack(alignment: .center) {
                 VStack {
                     Spacer()
@@ -138,7 +146,9 @@ struct WeatherView: View {
                 }
             }
             .padding(20)
+            // --- Section 2 ---
         }
+        // main layout ZStack ends
         .edgesIgnoringSafeArea(.bottom)
         .background(
             BgVideoView(videoName: "weather_vid")
