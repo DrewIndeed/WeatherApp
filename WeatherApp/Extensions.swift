@@ -88,6 +88,9 @@ extension String {
     
     // check if city name already has "City" or not. If not, concat "City".
     func checkCityTrailing() -> String {
-        return self.lowercased().contains("city")? self : self + " City"
+        if (self.lowercased().contains("city")) {
+            return self
+        }
+        return self + " City"
     }
 }
