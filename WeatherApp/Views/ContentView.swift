@@ -13,7 +13,7 @@ struct ContentView: View {
      the @Publish variables in Location Manager are updated
      */
     @StateObject var locationManager = LocationManager()
-    @State var backgroundColor: Color = Color(hue: 0.656, saturation: 0.932, brightness: 0.475) // dark blue
+    @State var backgroundColor: Color = Color(hue: 0.656, saturation: 0.787, brightness: 0.354) // dark blue
     @State var weatherManager = WeatherManager()
     @State var weatherData: WeatherResponseModel?
     

@@ -14,18 +14,18 @@ struct WeatherRow: View {
     
     var body: some View {
         // Status block starts
-        HStack(spacing: 20) {
+        HStack(spacing: 15) {
             // Icon for status attribute
             Image(systemName: logo)
-                .font(.title2)
+                .font(.title3)
                 .foregroundColor(.pink)
                 .frame(width: 20, height: 20)
                 .padding()
-                .background(Color(hue: 0.76, saturation: 0.032, brightness: 0.879, opacity: 0.3))
-                .cornerRadius(50)
+                .background(.white)
+                .cornerRadius(40)
             
             // Readable contents for status attribute
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 5) {
                 Text(name)
                     .font(.caption)
                 
@@ -40,6 +40,6 @@ struct WeatherRow: View {
 
 struct WeatherRow_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherRow(logo: "thermometer", name: "Feels like", value: "8°")
+        WeatherRow(logo: "thermometer", name: "Feels like", value: "0.00 m/s")
     }
 }
