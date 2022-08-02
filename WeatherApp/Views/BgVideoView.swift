@@ -40,6 +40,6 @@ public struct BgVideoView: View {
 
 struct BgVideoView_Previews: PreviewProvider {
     static var previews: some View {
-        BgVideoView(videoName: "weather_video")
+        BgVideoView(videoName: "Clear")
     }
 }

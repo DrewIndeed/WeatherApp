@@ -208,7 +208,7 @@ struct WeatherView: View {
         // main layout ZStack ends
         .edgesIgnoringSafeArea(.bottom)
         .background(
-            BgVideoView(videoName: "weather_vid")
+            BgVideoView(videoName: "\(weather.weather[0].main)")
         )
         .preferredColorScheme(.dark)
     }
