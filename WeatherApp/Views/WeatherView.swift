@@ -94,6 +94,63 @@ struct WeatherView: View {
                     }
                     
                     Spacer()
+                    
+                    VStack(alignment: .center, spacing: 20) {
+                        HStack(alignment: .center, spacing: 20) {
+                            Image(systemName: "sunrise.fill")
+                                .renderingMode(.original)
+                                .font(.system(size: 40))
+                            
+                            Text("\(weather.sys.sunrise.convertDate(formate: "dd/MM/yyyy HH:mm:ss"))")
+                                .font(.system(size: 20))
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.center)
+                        }
+                        .frame(
+                            minWidth: nil, maxWidth: .infinity,
+                            minHeight: nil, maxHeight: 100,
+                            alignment: .center
+                        )
+                        .background(
+                            Color(
+                                hue: 0.656,
+                                saturation: 0.787,
+                                brightness: 0.354,
+                                opacity: 0.4
+                            )
+                        )
+                        .cornerRadius(40)
+                        
+                        HStack(alignment: .center, spacing: 20) {
+                            Image(systemName: "sunset.fill")
+                                .renderingMode(.original)
+                                .font(.system(size: 40))
+                            
+                            Text("\(weather.sys.sunset.convertDate(formate: "dd/MM/yyyy HH:mm:ss"))")
+                                .font(.system(size: 20))
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.center)
+                        }
+                        .frame(
+                            minWidth: nil, maxWidth: .infinity,
+                            minHeight: nil, maxHeight: 100,
+                            alignment: .center
+                        )
+                        .background(
+                            Color(
+                                hue: 0.656,
+                                saturation: 0.787,
+                                brightness: 0.354,
+                                opacity: 0.4
+                            )
+                        )
+                        .cornerRadius(40)
+                        
+                        Spacer()
+                    }
+                    .padding(.top, 10)
+                    
+                    Spacer()
                 }
                 // weather description with current temparature - ends
                 .frame(maxWidth: .infinity, alignment: .center)

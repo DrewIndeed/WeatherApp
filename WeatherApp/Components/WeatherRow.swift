@@ -30,7 +30,6 @@ struct WeatherRow: View {
                     .font(.caption)
                 
                 Text(value)
-                    .bold()
                     .font(.title3)
             }
         }

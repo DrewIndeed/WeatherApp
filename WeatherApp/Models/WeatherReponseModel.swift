@@ -46,6 +46,8 @@ struct WeatherResponseModel: Decodable {
     
     struct SysResponse: Decodable {
         var country: String
+        var sunrise: Double
+        var sunset: Double
     }
 }
 
