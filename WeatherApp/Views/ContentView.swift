@@ -28,7 +28,7 @@ struct ContentView: View {
                 // if weather has been feathed successfully
                 if let weatherData = weatherData {
                     // then, display weather details view
-                    WeatherView(weather: weatherData)
+                    WeatherDetailsView(weather: weatherData)
                         .environmentObject(locationManager)
                 } else {
                     // if not, show loading and start fetching
