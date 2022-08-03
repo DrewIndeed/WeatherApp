@@ -30,10 +30,6 @@ struct WeatherDetailsView: View {
                         withAnimation(.easeInOut(duration: 0.4)) {
                             // clear location to get back to welcome view
                             locationManager.location = nil
-                            
-                            if (locationManager.location != nil) {
-                                locationManager.location = nil
-                            }
                         }
                     } label: {
                         Image(systemName: "chevron.left")
@@ -50,14 +46,18 @@ struct WeatherDetailsView: View {
                         
                         Text("\(Date().formatted(.dateTime.weekday().month().day().hour().minute()))"
                         )
+                        .fontWeight(.medium)
+                        
+                        Text("\(weather.weather[0].description)".capitalized)
                         .fontWeight(.light)
+                        .foregroundColor(.cyan)
                     }
                     .foregroundColor(.white)
                     .frame(
                         maxWidth: .infinity,
                         alignment: .trailing
                     )
-                    .padding([.leading, .trailing], 20)
+                    .padding([.leading, .trailing, .top], 20)
                 }
                 // --- [END] backbutton + location name + current date ---
                 
@@ -65,45 +65,36 @@ struct WeatherDetailsView: View {
                 ScrollView {
                     VStack (spacing: 20) {
                         // --- [START] HStack - description + temperature ---
-                        HStack (spacing: 10) {
-                            VStack(spacing: 6) {
-                                Image(systemName: "\(weather.weather[0].main)".checkIconName())
-                                    .renderingMode(.original)
-                                    .font(.system(size: 40))
-                                
-                                Text("\(weather.weather[0].description)".capitalized)
-                                    .font(.system(size: 20))
-                                    .bold()
-                                    .foregroundColor(.cyan)
-                                    .multilineTextAlignment(.center)
-                            }
-                            .frame(
-                                width: 120,
-                                height: 120,
-                                alignment: .center
-                            )
-                            .background(
-                                Color(
-                                    hue: 0.656,
-                                    saturation: 0.787,
-                                    brightness: 0.354,
-                                    opacity: 0.4
-                                )
-                            )
-                            .cornerRadius(40)
-                            
-                            Spacer()
-                            
+                        HStack (spacing: 0) {
                             Text(weather.main.temp.roundDouble(pointnum: 0) + "°C")
-                                .font(.system(size: 65))
-                                .foregroundColor(.yellow)
+                                .font(.system(size: 60))
+                                .foregroundColor(Color(hue: 0.145, saturation: 1.0, brightness: 1.0))
                                 .multilineTextAlignment(.center)
                                 .frame(
-                                    width: 165,
-                                    height: 120,
+                                    minWidth: 120, maxWidth: .infinity,
+                                    minHeight: 100, maxHeight: .infinity,
                                     alignment: .center
                                 )
-                                .padding([.leading, .trailing], 20)
+                                .background(
+                                    Color(
+                                        hue: 0.656,
+                                        saturation: 0.787,
+                                        brightness: 0.354,
+                                        opacity: 0.4
+                                    )
+                                )
+                                .cornerRadius(40)
+                            
+                            Spacer().frame(width: 20)
+                            
+                            Image(systemName: "\(weather.weather[0].main)".checkIconName())
+                                .renderingMode(.original)
+                                .font(.system(size: 40))
+                                .frame(
+                                    minWidth: 80, maxWidth: 120,
+                                    minHeight: 80, maxHeight: 120,
+                                    alignment: .center
+                                )
                                 .background(
                                     Color(
                                         hue: 0.656,
@@ -115,6 +106,7 @@ struct WeatherDetailsView: View {
                                 .cornerRadius(40)
                         }
                         // --- [END] HStack - description + temperature ---
+//                        .background(.pink)
                         .padding(.top, 20)
                         .padding([.leading, .trailing], 40)
                         
@@ -197,10 +189,10 @@ struct WeatherDetailsView: View {
                                             WeatherRow(logo: "thermometer.sun", name: "Min temp",
                                                        value: (weather.main.tempMin.roundDouble(pointnum: 2) + ("°C")))
                                             
-                                            WeatherRow(logo: "thermometer.sun.fill", name: "Feels like",
+                                            WeatherRow(logo: "thermometer", name: "Feels like",
                                                        value: (weather.main.feelsLike.roundDouble(pointnum: 2) + "°C"))
                                             
-                                            WeatherRow(logo: "thermometer", name: "Max temp",
+                                            WeatherRow(logo: "thermometer.sun.fill", name: "Max temp",
                                                        value: (weather.main.tempMax.roundDouble(pointnum: 2) + "°C"))
                                             
                                             WeatherRow(logo: "wind", name: "Wind speed",

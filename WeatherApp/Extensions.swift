@@ -70,7 +70,7 @@ extension String {
     func checkIconName() -> String {
         let iconsMap: [String: String] = [
             "Clear": "sun.max.fill",
-            "Clouds": "cloud.sun.fill",
+            "Clouds": "cloud.fill",
             "Thunderstorm": "cloud.bolt.rain.fill",
             "Rain": "cloud.heavyrain.fill",
             "Snow": "snowflake",
