@@ -35,6 +35,16 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     /*
+     Method to track if location authorization has been updated
+     */
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        // request again if location update process got delayed or ignored
+        if (location == nil) {
+            manager.requestLocation()
+        }
+    }
+    
+    /*
      Method to track if there has been an error fetching weather data
      */
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
