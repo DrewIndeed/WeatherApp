@@ -34,3 +34,6 @@ func load<T: Decodable>(_ filename: String) -> T {
 
 // load preview weather JSON data
 var previewWeather: WeatherResponseModel = load("weatherData.json")
+
+// load preview AU cities JSON data
+var previewCities: CitiesResponseModel = load("auCitiesData.json")

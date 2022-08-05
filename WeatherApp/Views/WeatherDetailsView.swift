@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WeatherDetailsView: View {
     @EnvironmentObject var locationManager: LocationManager
+    @EnvironmentObject var weatherManager: WeatherManager
     var weather: WeatherResponseModel
     
     // grid layout for Current Status
@@ -30,6 +31,9 @@ struct WeatherDetailsView: View {
                         withAnimation(.easeInOut(duration: 0.4)) {
                             // clear location to get back to welcome view
                             locationManager.location = nil
+                            
+                            // clear weatherData to inject new data later for different coors
+                            weatherManager.weatherData = nil
                         }
                     } label: {
                         Image(systemName: "chevron.left")
@@ -49,8 +53,7 @@ struct WeatherDetailsView: View {
                         .fontWeight(.medium)
                         
                         Text("\(weather.weather[0].description)".capitalized)
-                        .fontWeight(.light)
-                        .foregroundColor(.cyan)
+                            .fontWeight(.medium)
                     }
                     .foregroundColor(.white)
                     .frame(
@@ -106,7 +109,6 @@ struct WeatherDetailsView: View {
                                 .cornerRadius(40)
                         }
                         // --- [END] HStack - description + temperature ---
-//                        .background(.pink)
                         .padding(.top, 20)
                         .padding([.leading, .trailing], 40)
                         

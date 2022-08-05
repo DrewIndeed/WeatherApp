@@ -9,14 +9,16 @@
 import Foundation
 import CoreLocation
 
-class WeatherManager {
+class WeatherManager: NSObject, ObservableObject {
+    @Published var weatherData: WeatherResponseModel? // remember to be Optional
+    
     /*
      Method to make HTTP request to get weather from OpenWeather API
      */
     func getCurrentWeather(
         latitude: CLLocationDegrees,
         longitude: CLLocationDegrees
-    ) async throws -> WeatherResponseModel {
+    ) async throws {
         // API key
         let API_KEY = "8cefcd7047392abd796820e4610483a9";
         
@@ -36,6 +38,9 @@ class WeatherManager {
         // decode JSON response and return
         let decodedData = try JSONDecoder().decode(WeatherResponseModel.self, from: data)
         
-        return decodedData
+        // SOLVED: Publishing changes from background threads is not allowed
+        await MainActor.run {
+            weatherData = decodedData
+        }
     }
 }
