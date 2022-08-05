@@ -47,6 +47,8 @@ struct WeatherDetailsView: View {
                         Text("\(weather.name.checkCityTrailing()), \(weather.sys.country)")
                             .font(.title2)
                             .bold()
+                            .multilineTextAlignment(.trailing)
+                            .lineLimit(2)
                         
                         Text("\(Date().formatted(.dateTime.weekday().month().day().hour().minute()))"
                         )

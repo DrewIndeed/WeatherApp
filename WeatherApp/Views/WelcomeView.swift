@@ -16,23 +16,23 @@ struct WelcomeView: View {
     
     var body: some View {
         NavigationView {
-            // Content starts
-            VStack {
-                // textual content
-                VStack (spacing: 20) {
-                    Text("Welcome to the Weather App")
-                        .bold()
-                        .font(.system(size: 40))
-                        .foregroundColor(Color(hue: 0.951, saturation: 0.636, brightness: 0.999))
-                    
-                    Text("Let's choose where you want to know about the weather, even your current area by clicking 'Share Current Location'!")
-                        .foregroundColor(.white)
-                        .font(.subheadline)
-                        .padding()
-                }
-                .multilineTextAlignment(.center)
-                .lineSpacing(5)
-                .padding()
+            //--- [START] - VStack - All contents ---
+            VStack(alignment: .center, spacing: 20) {
+                Text("Welcome to the Weather App")
+                    .foregroundColor(Color(hue: 0.951, saturation: 0.636, brightness: 0.999))
+                    .font(.system(size: 40))
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .lineSpacing(5)
+                
+                Text("Let's choose where you want to know about the weather, even your current area by clicking 'Share Current Location'!")
+                    .foregroundColor(.white)
+                    .font(.subheadline)
+                    .multilineTextAlignment(.center)
+                    .lineSpacing(5)
+                    .padding([.leading, .trailing], 30)
+                
+                Spacer().frame(height: 30)
                 
                 // get location permission -> if yes, get location coordinates
                 LocationButton(.shareCurrentLocation) {
@@ -74,11 +74,14 @@ struct WelcomeView: View {
                         .frame(width: 250, height: 57)
                 )
                 .frame(width: 250, height: 70)
-                .padding(.top, 15)
-                .padding(.bottom, 150)
             }
-            // Content ends
-            .frame(minWidth: nil, maxWidth: .infinity, minHeight: nil, maxHeight: .infinity, alignment: .center)
+            .padding([.bottom], 100)
+            //--- [END] - VStack - All contents ---
+            .frame(
+                minWidth: nil, maxWidth: .infinity,
+                minHeight: nil, maxHeight: .infinity,
+                alignment: .center
+            )
             .background(Color(hue: 0.656, saturation: 0.787, brightness: 0.354))
         }
     }
