@@ -259,7 +259,7 @@ struct WeatherDetailsView: View {
                 minHeight: 200, maxHeight: .infinity
             )
             .background(
-                BgVideoView(videoName: "\(weather.weather[0].main)")
+                BackgroundVideoView(videoName: "\(weather.weather[0].main)")
             )
         }
         // --- [END] - ZStack wrapper ---
