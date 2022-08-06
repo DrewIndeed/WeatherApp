@@ -33,10 +33,11 @@ class LoopingPlayerUIView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    /// Depending on your video you can select a proper `videoGravity` property to fit better
+    // Depending on video, select a proper `videoGravity` property to fit better
     init(videoName: String,
          player: AVQueuePlayer,
-         videoGravity: AVLayerVideoGravity = .resizeAspectFill) {
+         videoGravity: AVLayerVideoGravity = .resizeAspectFill
+    ) {
         
         super.init(frame: .zero)
         
@@ -44,7 +45,7 @@ class LoopingPlayerUIView: UIView {
         let asset = AVAsset(url: fileUrl)
         let item = AVPlayerItem(asset: asset)
         
-        player.isMuted = true // just in case
+        player.isMuted = true // to mute volume if applied
         playerLayer.player = player
         playerLayer.videoGravity = videoGravity
         layer.addSublayer(playerLayer)

@@ -25,7 +25,7 @@
 import SwiftUI
 import AVFoundation
 
-public struct BgVideoView: View {
+public struct BackgroundVideoView: View {
     @State private var player = AVQueuePlayer()
     private let videoName: String
     
@@ -55,8 +55,8 @@ public struct BgVideoView: View {
     }
 }
 
-struct BgVideoView_Previews: PreviewProvider {
+struct BackgroundVideoView_Previews: PreviewProvider {
     static var previews: some View {
-        BgVideoView(videoName: "Clear")
+        BackgroundVideoView(videoName: "Clear")
     }
 }

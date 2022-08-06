@@ -10,7 +10,7 @@
 		8F2090AE289ABDA1003A8477 /* AustraliaCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2090AD289ABDA1003A8477 /* AustraliaCitiesView.swift */; };
 		8F2090B0289ABE35003A8477 /* auCitiesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8F2090AF289ABE35003A8477 /* auCitiesData.json */; };
 		8F2090B2289ABE8B003A8477 /* CitiesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2090B1289ABE8B003A8477 /* CitiesResponseModel.swift */; };
-		8F40CAFB2898CE6700BDEAB3 /* BgVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40CAFA2898CE6700BDEAB3 /* BgVideoView.swift */; };
+		8F40CAFB2898CE6700BDEAB3 /* BackgroundVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40CAFA2898CE6700BDEAB3 /* BackgroundVideoView.swift */; };
 		8F40CAFD2898CF0200BDEAB3 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40CAFC2898CF0200BDEAB3 /* PlayerView.swift */; };
 		8F40CAFF2898CF2200BDEAB3 /* LoopingPlayerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40CAFE2898CF2200BDEAB3 /* LoopingPlayerUIView.swift */; };
 		8F88E171289415B80047ACDC /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F88E170289415B80047ACDC /* WeatherManager.swift */; };
@@ -40,7 +40,7 @@
 		8F2090AD289ABDA1003A8477 /* AustraliaCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AustraliaCitiesView.swift; sourceTree = "<group>"; };
 		8F2090AF289ABE35003A8477 /* auCitiesData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = auCitiesData.json; sourceTree = "<group>"; };
 		8F2090B1289ABE8B003A8477 /* CitiesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesResponseModel.swift; sourceTree = "<group>"; };
-		8F40CAFA2898CE6700BDEAB3 /* BgVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgVideoView.swift; sourceTree = "<group>"; };
+		8F40CAFA2898CE6700BDEAB3 /* BackgroundVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundVideoView.swift; sourceTree = "<group>"; };
 		8F40CAFC2898CF0200BDEAB3 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		8F40CAFE2898CF2200BDEAB3 /* LoopingPlayerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopingPlayerUIView.swift; sourceTree = "<group>"; };
 		8F88E170289415B80047ACDC /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 				8FB819032892CBE000954A8A /* WelcomeView.swift */,
 				8FB819052892D5F500954A8A /* CustomProgressView.swift */,
 				8FB819072892DE1800954A8A /* ActivityIndicatorView.swift */,
-				8F40CAFA2898CE6700BDEAB3 /* BgVideoView.swift */,
+				8F40CAFA2898CE6700BDEAB3 /* BackgroundVideoView.swift */,
 				8F40CAFC2898CF0200BDEAB3 /* PlayerView.swift */,
 				8F96B9E628996CB500EC3124 /* WeatherDetailsView.swift */,
 				8F40CAFE2898CF2200BDEAB3 /* LoopingPlayerUIView.swift */,
@@ -254,7 +254,7 @@
 				8F88E18028951A180047ACDC /* WeatherRow.swift in Sources */,
 				8F2090AE289ABDA1003A8477 /* AustraliaCitiesView.swift in Sources */,
 				8FB818F22892C6E000954A8A /* WeatherAppApp.swift in Sources */,
-				8F40CAFB2898CE6700BDEAB3 /* BgVideoView.swift in Sources */,
+				8F40CAFB2898CE6700BDEAB3 /* BackgroundVideoView.swift in Sources */,
 				8FB819012892C98500954A8A /* LocationManager.swift in Sources */,
 				8F88E171289415B80047ACDC /* WeatherManager.swift in Sources */,
 				8F40CAFD2898CF0200BDEAB3 /* PlayerView.swift in Sources */,
