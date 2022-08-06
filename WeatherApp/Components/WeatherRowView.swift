@@ -24,7 +24,7 @@
 
 import SwiftUI
 
-struct WeatherRow: View {
+struct WeatherRowView: View {
     var logo: String
     var name: String
     var value: String
@@ -54,8 +54,8 @@ struct WeatherRow: View {
     }
 }
 
-struct WeatherRow_Previews: PreviewProvider {
+struct WeatherRowView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherRow(logo: "thermometer", name: "Feels like", value: "0.00 m/s")
+        WeatherRowView(logo: "thermometer", name: "Feels like", value: "0.00 m/s")
     }
 }

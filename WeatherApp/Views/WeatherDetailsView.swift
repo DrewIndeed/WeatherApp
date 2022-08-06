@@ -207,22 +207,22 @@ struct WeatherDetailsView: View {
                                         pinnedViews: [.sectionHeaders],
                                         
                                         content: {
-                                            WeatherRow(logo: "thermometer.sun", name: "Min temp",
+                                            WeatherRowView(logo: "thermometer.sun", name: "Min temp",
                                                        value: (weather.main.tempMin.roundDouble(pointnum: 2) + ("°C")))
                                             
-                                            WeatherRow(logo: "thermometer", name: "Feels like",
+                                            WeatherRowView(logo: "thermometer", name: "Feels like",
                                                        value: (weather.main.feelsLike.roundDouble(pointnum: 2) + "°C"))
                                             
-                                            WeatherRow(logo: "thermometer.sun.fill", name: "Max temp",
+                                            WeatherRowView(logo: "thermometer.sun.fill", name: "Max temp",
                                                        value: (weather.main.tempMax.roundDouble(pointnum: 2) + "°C"))
                                             
-                                            WeatherRow(logo: "wind", name: "Wind speed",
+                                            WeatherRowView(logo: "wind", name: "Wind speed",
                                                        value: (weather.wind.speed.roundDouble(pointnum: 2) + " m/s"))
                                             
-                                            WeatherRow(logo: "humidity", name: "Humidity",
+                                            WeatherRowView(logo: "humidity", name: "Humidity",
                                                        value: "\(weather.main.humidity.roundDouble(pointnum: 0))%")
                                             
-                                            WeatherRow(logo: "heart.circle.fill", name: "Pressure",
+                                            WeatherRowView(logo: "heart.circle.fill", name: "Pressure",
                                                        value: "\(weather.main.pressure.roundDouble(pointnum: 0)) hPa")
                                         }
                                     )
