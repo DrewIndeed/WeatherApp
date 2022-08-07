@@ -28,6 +28,7 @@
 		8FB819042892CBE000954A8A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB819032892CBE000954A8A /* WelcomeView.swift */; };
 		8FB819062892D5F500954A8A /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB819052892D5F500954A8A /* CustomProgressView.swift */; };
 		8FB819082892DE1800954A8A /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB819072892DE1800954A8A /* ActivityIndicatorView.swift */; };
+		8FD01FE1289F6B1A00FF9630 /* document.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8FD01FE0289F6B1A00FF9630 /* document.pdf */; };
 		8FE553BD28992508006CF855 /* Snow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8FE553B728992508006CF855 /* Snow.mp4 */; };
 		8FE553BE28992508006CF855 /* Thunderstorm.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8FE553B828992508006CF855 /* Thunderstorm.mp4 */; };
 		8FE553BF28992508006CF855 /* Drizzle.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8FE553B928992508006CF855 /* Drizzle.mp4 */; };
@@ -59,6 +60,7 @@
 		8FB819032892CBE000954A8A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		8FB819052892D5F500954A8A /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		8FB819072892DE1800954A8A /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		8FD01FE0289F6B1A00FF9630 /* document.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = document.pdf; path = ../../document.pdf; sourceTree = "<group>"; };
 		8FE553B728992508006CF855 /* Snow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Snow.mp4; path = ../../ios_asm1_vids/Snow.mp4; sourceTree = "<group>"; };
 		8FE553B828992508006CF855 /* Thunderstorm.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Thunderstorm.mp4; path = ../../ios_asm1_vids/Thunderstorm.mp4; sourceTree = "<group>"; };
 		8FE553B928992508006CF855 /* Drizzle.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Drizzle.mp4; path = ../../ios_asm1_vids/Drizzle.mp4; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		8FB818F02892C6E000954A8A /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				8FD01FE0289F6B1A00FF9630 /* document.pdf */,
 				8F778096289ECB16007ECBF5 /* BackgroundVideoPlayer */,
 				8F88E17B2894FCDA0047ACDC /* Extensions.swift */,
 				8FE553BC28992508006CF855 /* Clear.mp4 */,
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FB818F92892C6E400954A8A /* Preview Assets.xcassets in Resources */,
+				8FD01FE1289F6B1A00FF9630 /* document.pdf in Resources */,
 				8FE553C128992508006CF855 /* Rain.mp4 in Resources */,
 				8F88E1782894FBBC0047ACDC /* weatherData.json in Resources */,
 				8FE553BF28992508006CF855 /* Drizzle.mp4 in Resources */,
